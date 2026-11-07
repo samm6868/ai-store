@@ -1,0 +1,34 @@
+name: AI Store Auto-Pilot
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-ai-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Store Files
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run AI Product Hunter & Marketer
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python ai_agent.py
+
+      - name: Update Store Automatically
+        run: |
+          git config --global user.name "AI Store Agent"
+          git config --global user.email "agent@trendify.ai"
+          git add products.json
+          git commit -m "🤖 AI Auto-Update: New viral products added" || exit 0
+          git push
