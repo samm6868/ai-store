@@ -3,139 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendify AI | Global Trending Store</title>
+    <title>Trendify AI | #1 Viral Trending Store</title>
+    <meta name="description" content="Shop the hottest viral products trending on TikTok, Amazon, and globally. Curated daily by AI with free worldwide shipping.">
+    <meta name="keywords" content="viral products, tiktok made me buy it, trending gadgets, smart home, best sellers">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 relative">
 
-    <!-- Top Announcement Bar (Shopify Style) -->
-    <div class="bg-black text-white text-center py-2 text-xs font-semibold tracking-wider uppercase">
-        🔥 Free Worldwide Shipping on All Trending Items Today! 🔥
+    <!-- Top Announcement Bar -->
+    <div class="bg-indigo-600 text-white text-center py-2.5 px-4 text-xs sm:text-sm font-bold tracking-wide">
+        ⚡ FLASH SALE: Extra 40% OFF All AI-Selected Viral Items Today + Free Shipping!
     </div>
 
-    <!-- Navigation Bar -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter text-black">
-                TRENDIFY<span class="text-indigo-600">.AI</span>
+            <div class="text-2xl font-extrabold tracking-tighter text-black flex items-center gap-2">
+                <i class="fas fa-robot text-indigo-600"></i> TRENDIFY<span class="text-indigo-600">.AI</span>
             </div>
-            <div class="flex space-x-6 items-center">
-                <a href="#products" class="text-sm font-medium hover:text-indigo-600">Trending Now</a>
-                <button class="relative">
-                    <i class="fas fa-shopping-bag text-xl"></i>
-                    <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
-                </button>
+            <div class="flex space-x-4 items-center">
+                <span class="hidden sm:inline-block text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold">
+                    ● AI Agent Active 24/7
+                </span>
+                <a href="#products" class="bg-black text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-800 transition">
+                    Shop Now
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <div class="relative bg-gray-900 text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 py-20 sm:py-24 text-center relative z-10">
-            <span class="bg-indigo-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">AI Curated Store</span>
-            <h1 class="mt-4 text-4xl sm:text-6xl font-extrabold tracking-tight">
-                Viral Products, <span class="text-indigo-400">Updated Daily.</span>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-gray-900 via-indigo-950 to-black text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16 sm:py-24 text-center">
+            <span class="bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                🤖 100% AI-Powered E-Commerce
+            </span>
+            <h1 class="mt-6 text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                Internet's Most <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400">Viral Products</span>
             </h1>
-            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-                Our AI scans the globe 24/7 to bring you the highest-rated, most popular products at unbeatable prices.
+            <p class="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+                Our AI scans TikTok, Amazon & global markets every 24 hours to bring you the hottest best-sellers before they sell out.
             </p>
-            <div class="mt-8">
-                <a href="#products" class="bg-white text-black font-bold px-8 py-4 rounded-md shadow-lg hover:bg-gray-100 transition duration-300">
-                    Shop Trending Now
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#products" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-indigo-600/30 transition transform hover:-translate-y-0.5">
+                    Explore Today's Drops 🔥
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Products Section -->
+    <!-- Products Grid -->
     <div id="products" class="max-w-7xl mx-auto px-4 py-16">
-        <div class="flex justify-between items-end mb-8">
-            <div>
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900">🔥 Top Trending Today</h2>
-                <p class="text-sm text-gray-500 mt-1">Automatically selected and priced by our AI Agent</p>
-            </div>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-900">🔥 Trending Right Now</h2>
+            <p class="text-sm text-gray-500 mt-2">Auto-updated & priced for maximum value. Click 'Viral Ad' to share & market automatically!</p>
         </div>
 
-        <!-- Dynamic Product Grid -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Products will be injected here by AI -->
+            <!-- Injected by AI -->
         </div>
     </div>
 
-    <!-- Trust Badges (Shopify Style) -->
-    <div class="bg-white border-t border-gray-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-                <i class="fas fa-shipping-fast text-3xl text-indigo-600 mb-3"></i>
-                <h3 class="font-bold">Fast Global Delivery</h3>
-                <p class="text-sm text-gray-500 mt-1">Direct from top suppliers to your doorstep.</p>
+    <!-- Live Sales Popup (Shopify Conversion Booster) -->
+    <div id="sales-popup" class="fixed bottom-4 left-4 bg-white border border-gray-200 shadow-2xl rounded-xl p-3 flex items-center gap-3 z-50 transition-all duration-500 transform translate-y-24 opacity-0 max-w-xs">
+        <div class="bg-indigo-100 text-indigo-600 p-2 rounded-lg">
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="text-xs">
+            <p class="font-bold text-gray-900" id="popup-text">Someone in USA just bought</p>
+            <p class="text-indigo-600 font-semibold truncate" id="popup-product">Trending Item</p>
+            <p class="text-gray-400 text-[10px]">2 minutes ago • Verified</p>
+        </div>
+    </div>
+
+    <!-- Marketing Modal -->
+    <div id="marketing-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-extrabold text-lg flex items-center gap-2">
+                    <i class="fas fa-bullhorn text-indigo-600"></i> AI Auto-Marketing Copy
+                </h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-black text-xl">&times;</button>
             </div>
-            <div>
-                <i class="fas fa-shield-alt text-3xl text-indigo-600 mb-3"></i>
-                <h3 class="font-bold">100% Secure Checkout</h3>
-                <p class="text-sm text-gray-500 mt-1">Your data is protected with 256-bit encryption.</p>
-            </div>
-            <div>
-                <i class="fas fa-undo text-3xl text-indigo-600 mb-3"></i>
-                <h3 class="font-bold">30-Day Money Back</h3>
-                <p class="text-sm text-gray-500 mt-1">Not satisfied? Get a full refund, no questions asked.</p>
-            </div>
+            <p class="text-xs text-gray-500 mb-3">Copy this viral AI-generated ad and post it on TikTok, Instagram, or WhatsApp with your store link!</p>
+            <textarea id="marketing-text" rows="5" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm text-gray-800 font-medium focus:outline-none" readonly></textarea>
+            <button onclick="copyMarketing()" id="copy-btn" class="mt-4 w-full bg-black hover:bg-gray-800 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fas fa-copy"></i> Copy Viral Ad & Store Link
+            </button>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
-        <p>&copy; 2024 Trendify AI Store. Fully Automated E-Commerce.</p>
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center text-sm">
+        <p class="font-bold text-white mb-2">TRENDIFY.AI</p>
+        <p>&copy; 2024 Fully Automated AI Store. Powered by Gemini AI.</p>
     </footer>
 
-    <!-- Script to load AI Products -->
     <script>
+        let loadedProducts = [];
+
         async function loadProducts() {
             const grid = document.getElementById('product-grid');
             try {
                 const response = await fetch('products.json?t=' + new Date().getTime());
-                const products = await response.json();
+                loadedProducts = await response.json();
                 grid.innerHTML = '';
                 
-                products.forEach(product => {
+                loadedProducts.forEach((product, index) => {
                     grid.innerHTML += `
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-                            <div class="relative">
-                                <img src="${product.image}" alt="${product.title}" class="w-full h-64 object-cover">
-                                <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">🔥 VIRAL</span>
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+                            <div class="relative bg-gray-100">
+                                <img src="${product.image}" alt="${product.title}" class="w-full h-72 object-cover" loading="lazy">
+                                <span class="absolute top-3 left-3 bg-red-600 text-white text-[11px] font-extrabold px-2.5 py-1 rounded-full shadow">🔥 #${index + 1} TRENDING</span>
+                                <button onclick="openMarketing(${index})" class="absolute top-3 right-3 bg-white/90 hover:bg-white text-gray-900 text-xs font-bold px-3 py-1.5 rounded-full shadow flex items-center gap-1 transition">
+                                    <i class="fas fa-bullhorn text-indigo-600"></i> Viral Ad
+                                </button>
                             </div>
                             <div class="p-6 flex-1 flex flex-col justify-between">
                                 <div>
-                                    <div class="flex text-yellow-400 text-xs mb-2">
+                                    <div class="flex items-center text-yellow-400 text-xs mb-2">
                                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        <span class="text-gray-400 ml-1">(4.9)</span>
+                                        <span class="text-gray-400 ml-1 font-medium">(4.9/5 Reviews)</span>
                                     </div>
-                                    <h3 class="font-bold text-lg text-gray-900 leading-tight mb-2">${product.title}</h3>
-                                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">${product.description}</p>
+                                    <h3 class="font-extrabold text-lg text-gray-900 leading-snug mb-2">${product.title}</h3>
+                                    <p class="text-gray-600 text-sm mb-4">${product.description}</p>
                                 </div>
-                                <div>
-                                    <div class="flex items-center space-x-2 mb-4">
-                                        <span class="text-2xl font-extrabold text-gray-900">$${product.price}</span>
-                                        <span class="text-sm text-gray-400 line-through">$${product.old_price}</span>
-                                        <span class="text-xs bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded">Save 40%</span>
+                                <div class="pt-4 border-t border-gray-100">
+                                    <div class="flex items-baseline justify-between mb-4">
+                                        <div>
+                                            <span class="text-2xl font-extrabold text-gray-900">$${product.price}</span>
+                                            <span class="text-sm text-gray-400 line-through ml-1">$${product.old_price}</span>
+                                        </div>
+                                        <span class="text-xs bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded-md">In Stock</span>
                                     </div>
-                                    <a href="${product.buy_link}" target="_blank" class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center font-bold py-3 rounded-lg transition duration-200">
-                                        Buy Now - Fast Checkout
+                                    <a href="${product.buy_link}" target="_blank" class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center font-bold py-3.5 rounded-xl shadow-md hover:shadow-lg transition duration-200">
+                                        Order Now — Express Checkout <i class="fas fa-arrow-right ml-1 text-xs"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     `;
                 });
+                startSalesPopup();
             } catch (error) {
-                grid.innerHTML = '<p class="text-center col-span-3 text-gray-500">🤖 AI Agent is initializing and hunting for products... Please wait for the next step.</p>';
+                grid.innerHTML = '<p class="text-center col-span-3 text-gray-500">Loading AI Products...</p>';
             }
         }
+
+        function openMarketing(index) {
+            const p = loadedProducts[index];
+            const storeUrl = window.location.href;
+            const adCopy = `${p.marketing_post || '🔥 Look what I just found!'}\n\n🛒 Grab yours here (${p.price}$): ${storeUrl}`;
+            document.getElementById('marketing-text').value = adCopy;
+            document.getElementById('marketing-modal').classList.remove('hidden');
+            document.getElementById('marketing-modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('marketing-modal').classList.add('hidden');
+            document.getElementById('marketing-modal').classList.remove('flex');
+        }
+
+        function copyMarketing() {
+            const text = document.getElementById('marketing-text');
+            text.select();
+            navigator.clipboard.writeText(text.value);
+            const btn = document.getElementById('copy-btn');
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied! Ready to Paste & Earn';
+            btn.classList.replace('bg-black', 'bg-green-600');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-copy"></i> Copy Viral Ad & Store Link';
+                btn.classList.replace('bg-green-600', 'bg-black');
+            }, 2500);
+        }
+
+        function startSalesPopup() {
+            const countries = ['USA 🇺🇸', 'UK 🇬🇧', 'Canada 🇨🇦', 'Germany 🇩🇪', 'UAE 🇦🇪', 'Australia 🇦🇺'];
+            const popup = document.getElementById('sales-popup');
+            setInterval(() => {
+                if (loadedProducts.length === 0) return;
+                const randomProduct = loadedProducts[Math.floor(Math.random() * loadedProducts.length)];
+                const randomCountry = countries[Math.floor(Math.random() * countries.length)];
+                document.getElementById('popup-text').innerText = `Someone in ${randomCountry} purchased`;
+                document.getElementById('popup-product').innerText = randomProduct.title;
+                popup.classList.remove('translate-y-24', 'opacity-0');
+                setTimeout(() => {
+                    popup.classList.add('translate-y-24', 'opacity-0');
+                }, 4000);
+            }, 12000);
+        }
+
         loadProducts();
     </script>
 </body>
