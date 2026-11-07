@@ -8,8 +8,7 @@ from datetime import datetime
 raw_key = os.environ.get("GEMINI_API_KEY", "")
 API_KEY = raw_key.strip()
 AFFILIATE_ID = os.environ.get("AFFILIATE_ID", "trendify_ai").strip()
-REPO_OWNER = os.environ.get("GITHUB_REPOSITORY_OWNER", "user")
-STORE_URL = f"https://{REPO_OWNER}.github.io/ai-store"
+STORE_URL = "https://samm6868.github.io/ai-store"
 
 prompt = """
 Act as an elite E-Commerce Dropshipping & Marketing AI Agent.
@@ -121,10 +120,11 @@ except Exception as e:
 with open("products.json", "w", encoding="utf-8") as f:
     json.dump(final_products, f, indent=2)
 
-# Generate Auto-Marketing RSS Feed for Social Media Automation
+# Generate Valid XML Auto-Marketing RSS Feed
 rss_items = ""
 now_str = datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")
 for i, p in enumerate(final_products):
+    safe_img_url = p['image'].replace("&", "&amp;")
     rss_items += f"""
     <item>
       <title><![CDATA[🔥 {p['title']} - Only ${p['price']}!]]></title>
@@ -132,7 +132,7 @@ for i, p in enumerate(final_products):
       <guid isPermaLink="false">{datetime.utcnow().strftime('%Y%m%d')}-{i}</guid>
       <pubDate>{now_str}</pubDate>
       <description><![CDATA[{p['marketing_post']} 👉 Shop Here: {STORE_URL}]]></description>
-      <enclosure url="{p['image']}" type="image/jpeg" />
+      <enclosure url="{safe_img_url}" length="50000" type="image/jpeg" />
     </item>"""
 
 rss_feed = f"""<?xml version="1.0" encoding="UTF-8" ?>
@@ -140,7 +140,7 @@ rss_feed = f"""<?xml version="1.0" encoding="UTF-8" ?>
   <channel>
     <title>Trendify AI Viral Store Feed</title>
     <link>{STORE_URL}</link>
-    <description>Automated Viral Products & Marketing Feed</description>
+    <description>Automated Viral Products and Marketing Feed</description>
     {rss_items}
   </channel>
 </rss>"""
@@ -148,4 +148,4 @@ rss_feed = f"""<?xml version="1.0" encoding="UTF-8" ?>
 with open("feed.xml", "w", encoding="utf-8") as f:
     f.write(rss_feed.strip())
 
-print("Products, Affiliate Links, and Auto-Marketing Feed generated successfully!")
+print("Valid XML Feed generated successfully!")
