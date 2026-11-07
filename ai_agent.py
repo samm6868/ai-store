@@ -3,9 +3,13 @@ import json
 import urllib.request
 import urllib.parse
 import random
+from datetime import datetime
 
 raw_key = os.environ.get("GEMINI_API_KEY", "")
 API_KEY = raw_key.strip()
+AFFILIATE_ID = os.environ.get("AFFILIATE_ID", "trendify_ai").strip()
+REPO_OWNER = os.environ.get("GITHUB_REPOSITORY_OWNER", "user")
+STORE_URL = f"https://{REPO_OWNER}.github.io/ai-store"
 
 prompt = """
 Act as an elite E-Commerce Dropshipping & Marketing AI Agent.
@@ -26,16 +30,13 @@ Return ONLY a valid JSON array with 6 objects in this exact format:
 def fetch_ai_products():
     if not API_KEY:
         raise ValueError("Missing API Key")
-    
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
     data = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"response_mime_type": "application/json"}
     }
     req = urllib.request.Request(
-        url, 
-        data=json.dumps(data).encode('utf-8'), 
-        headers={'Content-Type': 'application/json'}
+        url, data=json.dumps(data).encode('utf-8'), headers={'Content-Type': 'application/json'}
     )
     with urllib.request.urlopen(req, timeout=30) as response:
         result = json.loads(response.read().decode('utf-8'))
@@ -43,7 +44,6 @@ def fetch_ai_products():
         clean_text = raw_text.replace("```json", "").replace("```", "").strip()
         return json.loads(clean_text)
 
-# Smart Backup Viral Database (Ensures 100% Uptime & Crystal Clear HD Images)
 backup_pool = [
     {
         "title": "4K Ultra-HD Mini Smart Projector",
@@ -104,22 +104,48 @@ backup_pool = [
 try:
     ai_products = fetch_ai_products()
     final_products = []
-    for i, p in enumerate(ai_products[:6]):
+    for p in ai_products[:6]:
         kw = urllib.parse.quote(p['search_keyword'])
         seed = random.randint(1, 9999)
         img_prompt = urllib.parse.quote(f"bright commercial studio product photo of {p['search_keyword']} on pure white table")
         p['image'] = f"https://image.pollinations.ai/prompt/{img_prompt}?width=600&height=600&seed={seed}&nologo=true"
-        p['buy_link'] = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html"
+        p['buy_link'] = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html?aff_fcid={AFFILIATE_ID}"
         final_products.append(p)
 except Exception as e:
-    print(f"Using Smart Backup Pool due to: {e}")
     final_products = []
     for p in backup_pool:
         kw = urllib.parse.quote(p['search_keyword'])
-        p['buy_link'] = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html"
+        p['buy_link'] = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html?aff_fcid={AFFILIATE_ID}"
         final_products.append(p)
 
 with open("products.json", "w", encoding="utf-8") as f:
     json.dump(final_products, f, indent=2)
 
-print("Store successfully updated with 6 HD viral products!")
+# Generate Auto-Marketing RSS Feed for Social Media Automation
+rss_items = ""
+now_str = datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")
+for i, p in enumerate(final_products):
+    rss_items += f"""
+    <item>
+      <title><![CDATA[🔥 {p['title']} - Only ${p['price']}!]]></title>
+      <link>{STORE_URL}</link>
+      <guid isPermaLink="false">{datetime.utcnow().strftime('%Y%m%d')}-{i}</guid>
+      <pubDate>{now_str}</pubDate>
+      <description><![CDATA[{p['marketing_post']} 👉 Shop Here: {STORE_URL}]]></description>
+      <enclosure url="{p['image']}" type="image/jpeg" />
+    </item>"""
+
+rss_feed = f"""<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Trendify AI Viral Store Feed</title>
+    <link>{STORE_URL}</link>
+    <description>Automated Viral Products & Marketing Feed</description>
+    {rss_items}
+  </channel>
+</rss>"""
+
+with open("feed.xml", "w", encoding="utf-8") as f:
+    f.write(rss_feed.strip())
+
+print("Products, Affiliate Links, and Auto-Marketing Feed generated successfully!")
