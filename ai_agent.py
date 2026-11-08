@@ -8,7 +8,6 @@ from datetime import datetime
 raw_key = os.environ.get("GEMINI_API_KEY", "")
 API_KEY = raw_key.strip()
 AFFILIATE_KEY = "_c4Lh9g5v"
-AFFILIATE_LINK = "https://s.click.aliexpress.com/e/_c4Lh9g5v"
 STORE_URL = "https://samm6868.github.io/ai-store"
 
 prompt = """
@@ -109,15 +108,13 @@ try:
         seed = random.randint(1, 9999)
         img_prompt = urllib.parse.quote(f"bright commercial studio product photo of {p['search_keyword']} on pure white table")
         p['image'] = f"https://image.pollinations.ai/prompt/{img_prompt}?width=600&height=600&seed={seed}&nologo=true"
-        target_url = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html?sk={AFFILIATE_KEY}&aff_fsk={AFFILIATE_KEY}&aff_platform=portals-tool"
-        p['buy_link'] = f"{AFFILIATE_LINK}?dl_target_url={urllib.parse.quote(target_url)}"
+        p['buy_link'] = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html?sk={AFFILIATE_KEY}&aff_fsk={AFFILIATE_KEY}&aff_platform=portals-tool"
         final_products.append(p)
 except Exception as e:
     final_products = []
     for p in backup_pool:
         kw = urllib.parse.quote(p['search_keyword'])
-        target_url = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html?sk={AFFILIATE_KEY}&aff_fsk={AFFILIATE_KEY}&aff_platform=portals-tool"
-        p['buy_link'] = f"{AFFILIATE_LINK}?dl_target_url={urllib.parse.quote(target_url)}"
+        p['buy_link'] = f"https://www.aliexpress.com/w/wholesale-{kw.replace('%20', '-')}.html?sk={AFFILIATE_KEY}&aff_fsk={AFFILIATE_KEY}&aff_platform=portals-tool"
         final_products.append(p)
 
 with open("products.json", "w", encoding="utf-8") as f:
@@ -151,4 +148,4 @@ rss_feed = f"""<?xml version="1.0" encoding="UTF-8" ?>
 with open("feed.xml", "w", encoding="utf-8") as f:
     f.write(rss_feed.strip())
 
-print("Affiliate Links & Feed Updated Successfully!")
+print("Direct Product Affiliate Links Updated Successfully!")
