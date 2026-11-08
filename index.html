@@ -16,6 +16,9 @@
 </head>
 <body class="bg-gray-50 text-gray-800 relative">
 
+    <!-- Hidden Affiliate Cookie Dropper -->
+    <iframe id="aff-cookie" style="display:none;width:0;height:0;border:0;"></iframe>
+
     <!-- Top Announcement Bar -->
     <div class="bg-indigo-600 text-white text-center py-2.5 px-4 text-xs sm:text-sm font-bold tracking-wide">
         ⚡ FLASH SALE: Extra 40% OFF All AI-Selected Viral Items Today + Free Shipping!
@@ -108,6 +111,10 @@
     <script>
         let loadedProducts = [];
 
+        function activateAffiliateCookie() {
+            document.getElementById('aff-cookie').src = "https://s.click.aliexpress.com/e/_c4Lh9g5v";
+        }
+
         async function loadProducts() {
             const grid = document.getElementById('product-grid');
             try {
@@ -142,7 +149,7 @@
                                         </div>
                                         <span class="text-xs bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded-md">In Stock</span>
                                     </div>
-                                    <a href="${product.buy_link}" target="_blank" class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center font-bold py-3.5 rounded-xl shadow-md hover:shadow-lg transition duration-200">
+                                    <a href="${product.buy_link}" onclick="activateAffiliateCookie()" target="_blank" class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center font-bold py-3.5 rounded-xl shadow-md hover:shadow-lg transition duration-200">
                                         Order Now — Express Checkout <i class="fas fa-arrow-right ml-1 text-xs"></i>
                                     </a>
                                 </div>
