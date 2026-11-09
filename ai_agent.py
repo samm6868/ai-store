@@ -107,7 +107,6 @@ def fetch_live_ai_trends():
             print(f"Model {model} skipped: {err}")
     raise RuntimeError("All AI models busy, switching to Dynamic Trend Generator")
 
-# Dynamic Fallback Pool (18+ products) in case API quota is temporarily reached
 DYNAMIC_POOL = [
     {"title": "Smart WiFi Galaxy Starry Sky Projector", "description": "Voice-controlled nebula and laser star projector that turns any bedroom into a soothing cosmic oasis.", "price": "31.99", "old_price": "59.99", "search_keyword": "smart galaxy projector", "category": "projector", "marketing_post": "🌌 Sleep under the stars every single night! This voice-controlled Galaxy Projector is pure magic 🔥✨"},
     {"title": "Cryo-Glow Ultrasonic Ice Facial Roller & Scrubber", "description": "Depuff, tighten pores, and sculpt your jawline instantly with sonic vibrations and cooling therapy.", "price": "21.50", "old_price": "42.00", "search_keyword": "ultrasonic facial pore cleaner", "category": "beauty", "marketing_post": "💆‍♀️ Instant glass skin in 2 minutes a day! BeautyTok cannot stop talking about this sonic facial tool 😍✨"},
@@ -120,7 +119,7 @@ DYNAMIC_POOL = [
     {"title": "Interactive Self-Rolling Laser Cat & Dog Chaser Ball", "description": "Motion-activated smart pet toy that automatically avoids obstacles and keeps indoor pets active for hours.", "price": "16.99", "old_price": "32.99", "search_keyword": "smart interactive pet ball", "category": "pet", "marketing_post": "🐾 Your pet will never be bored again! Watch this smart obstacle-avoiding ball entertain them for hours 😍🐶"},
     {"title": "Pocket Bluetooth Inkless Thermal Label & Photo Printer", "description": "Print study notes, to-do lists, stickers, and memories straight from your smartphone without ever buying ink.", "price": "22.99", "old_price": "45.00", "search_keyword": "pocket thermal printer bluetooth", "category": "printer", "marketing_post": "🖨️ Zero ink, infinite stickers! Print notes and photos straight from your phone in seconds 📱✨"},
     {"title": "Levitating 3D Magnetic Floating Moon Lamp", "description": "Spins 360 degrees floating in mid-air via magnetic induction with 3 warm and cool ambient touch light modes.", "price": "36.99", "old_price": "72.00", "search_keyword": "levitating moon lamp magnetic", "category": "lighting", "marketing_post": "🌕 Everyone who visits my room asks where I got this floating Moon Lamp! Pure bedroom magic 😍✨"},
-    {"title": " Volcanic Flame Ultrasonic Essential Oil Diffuser", "description": "Creates a realistic dancing fireplace flame mist that humidifies dry air and fills your room with luxury fragrance.", "price": "26.99", "old_price": "52.00", "search_keyword": "volcano flame aroma diffuser", "category": "aroma", "marketing_post": "🔥 Touch-safe mist flames + relaxing essential oils! The #1 cozy room upgrade on TikTok right now 😍✨"}
+    {"title": "Volcanic Flame Ultrasonic Essential Oil Diffuser", "description": "Creates a realistic dancing fireplace flame mist that humidifies dry air and fills your room with luxury fragrance.", "price": "26.99", "old_price": "52.00", "search_keyword": "volcano flame aroma diffuser", "category": "aroma", "marketing_post": "🔥 Touch-safe mist flames + relaxing essential oils! The #1 cozy room upgrade on TikTok right now 😍✨"}
 ]
 
 try:
