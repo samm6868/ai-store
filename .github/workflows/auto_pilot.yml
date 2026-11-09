@@ -9,27 +9,27 @@ permissions:
   contents: write
 
 jobs:
-  run-ai-agent:
+  update-store:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Store Files
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Run AI Product Hunter & Marketer
+      - name: Run AI Product Hunter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python ai_agent.py
 
-      - name: Update Store Automatically
+      - name: Commit and Push Daily Updates
         run: |
-          git config --global user.name "AI Store Agent"
-          git config --global user.email "agent@trendify.ai"
+          git config --global user.name "AI Store Bot"
+          git config --global user.email "bot@trendify-ai.com"
+          git add products.json feed.xml product-*.html
+          git commit -m "🤖 Daily AI Store & Marketing Feed Update" || exit 0
           git pull --rebase origin main || true
-          git add products.json feed.xml
-          git commit -m "🤖 AI Auto-Update: New viral products added" || exit 0
           git push origin main
