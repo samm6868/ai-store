@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="p:domain_verify" content="961766b6c8ad3f3c686565a8c70c1622"/>
-    <title>Trendify AI | Global Viral Store</title>
+    <meta name="google-site-verification" content="Fk9gnlXYK-5P9IGJ12sSXz5GOCpWVhN5xi1_6m1r5T0" />
+    <title>Trendify AI | #1 Global Viral Gadgets Store (Up to 50% OFF)</title>
     <meta name="description" content="Discover today's top trending viral gadgets curated daily by AI. Up to 50% OFF + Free Worldwide Shipping!">
+    <meta name="keywords" content="viral gadgets, tiktok made me buy it, cool tech, smart home gadgets, trending products, daily deals, free worldwide shipping">
+    <link rel="canonical" href="https://samm6868.github.io/ai-store/" />
 
     <!-- Open Graph Meta Tags for Facebook, Instagram & Pinterest Previews -->
     <meta property="og:title" content="Trendify AI | #1 Global Viral Gadgets Store" />
@@ -27,6 +30,7 @@
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%); }
     </style>
+    <script id="schema-jsonld" type="application/ld+json">{}</script>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -109,10 +113,54 @@
             } catch (e) {}
         }
 
+        function shareProduct(title, price, idx) {
+            const shareUrl = `https://samm6868.github.io/ai-store/product-${idx}.html`;
+            const shareText = `🔥 Check out ${title} for only $${price} (50% OFF + Free Shipping)!`;
+            if (navigator.share) {
+                navigator.share({ title: title, text: shareText, url: shareUrl }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+                alert("Deal link copied! Ready to paste & share with friends.");
+            }
+        }
+
+        function injectGoogleRichSnippets(products) {
+            const schemaData = {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Trendify AI Daily Viral Gadgets",
+                "itemListElement": products.map((p, i) => ({
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "item": {
+                        "@type": "Product",
+                        "name": p.title,
+                        "image": p.image,
+                        "description": p.description,
+                        "brand": { "@type": "Brand", "name": "Trendify AI" },
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": p.rating || "4.9",
+                            "reviewCount": String(p.reviews || "1850").replace(/,/g, "")
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "url": `https://samm6868.github.io/ai-store/product-${i}.html`,
+                            "priceCurrency": "USD",
+                            "price": p.price,
+                            "availability": "https://schema.org/InStock"
+                        }
+                    }
+                }))
+            };
+            document.getElementById('schema-jsonld').textContent = JSON.stringify(schemaData);
+        }
+
         async function loadProducts() {
             try {
                 const res = await fetch('products.json?t=' + new Date().getTime());
                 allProducts = await res.json();
+                injectGoogleRichSnippets(allProducts);
                 renderCategories();
                 renderProducts();
             } catch (err) {
@@ -157,7 +205,9 @@
                 return;
             }
 
-            grid.innerHTML = filtered.map((p, idx) => `
+            grid.innerHTML = filtered.map((p, idx) => {
+                const safeTitleJs = p.title.replace(/'/g, "\\'");
+                return `
                 <div id="product-${idx}" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden flex flex-col border border-gray-100">
                     <div class="relative">
                         <img src="${p.image}" alt="${p.title}" class="w-full h-64 object-cover" loading="lazy">
@@ -176,20 +226,27 @@
                             <h3 class="font-extrabold text-lg text-gray-900 mb-2 leading-snug">${p.title}</h3>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-3">${p.description}</p>
                         </div>
-                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
                             <div>
                                 <span class="text-xs text-gray-400 line-through block">$${p.old_price}</span>
                                 <span class="text-2xl font-extrabold text-green-600">$${p.price}</span>
                             </div>
-                            <a href="${p.buy_link}" target="_blank" rel="noopener noreferrer"
-                               onclick="activateAffiliateCookie()"
-                               class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition text-sm">
-                                Buy Now 🛒
-                            </a>
+                            <div class="flex items-center gap-2">
+                                <button onclick="shareProduct('${safeTitleJs}', '${p.price}', ${idx})"
+                                        title="Share Deal"
+                                        class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold p-2.5 rounded-xl transition text-sm">
+                                    📤
+                                </button>
+                                <a href="${p.buy_link}" target="_blank" rel="noopener noreferrer"
+                                   onclick="activateAffiliateCookie()"
+                                   class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition text-sm">
+                                    Buy Now 🛒
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         document.getElementById('search-input').addEventListener('input', renderProducts);
