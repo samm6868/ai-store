@@ -29,6 +29,7 @@ jobs:
         run: |
           git config --global user.name "AI Store Agent"
           git config --global user.email "agent@trendify.ai"
+          git pull --rebase origin main || true
           git add products.json feed.xml
           git commit -m "🤖 AI Auto-Update: New viral products added" || exit 0
-          git push
+          git push origin main
