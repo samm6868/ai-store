@@ -30,7 +30,17 @@
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%); }
     </style>
-    <script id="schema-jsonld" type="application/ld+json">{}</script>
+
+    <!-- Clean, Compliant SEO Structured Data for Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Trendify AI | Global Viral Gadgets Catalog",
+      "url": "https://samm6868.github.io/ai-store/",
+      "description": "Daily AI-curated viral gadgets and trending global tech deals with worldwide shipping."
+    }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -94,10 +104,13 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-xs sm:text-sm mt-12">
+    <!-- Footer with Official Affiliate Transparency -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-4 text-center text-xs sm:text-sm mt-12">
         <p class="font-bold text-white mb-2">TRENDIFY AI GLOBAL STORE</p>
-        <p>© 2025 Trendify AI. Automatically Powered by Artificial Intelligence.</p>
+        <p class="max-w-2xl mx-auto text-gray-400 mb-2">
+            Trendify AI curates the internet's top trending deals daily. All orders, worldwide shipping, and Buyer Protection guarantees are securely fulfilled through our official global marketplace partner.
+        </p>
+        <p class="text-gray-500">© 2025 Trendify AI. Automatically Powered by Artificial Intelligence.</p>
     </footer>
 
     <!-- Hidden Affiliate Cookie Dropper (72-Hour Attribution) -->
@@ -124,43 +137,10 @@
             }
         }
 
-        function injectGoogleRichSnippets(products) {
-            const schemaData = {
-                "@context": "https://schema.org",
-                "@type": "ItemList",
-                "name": "Trendify AI Daily Viral Gadgets",
-                "itemListElement": products.map((p, i) => ({
-                    "@type": "ListItem",
-                    "position": i + 1,
-                    "item": {
-                        "@type": "Product",
-                        "name": p.title,
-                        "image": p.image,
-                        "description": p.description,
-                        "brand": { "@type": "Brand", "name": "Trendify AI" },
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": p.rating || "4.9",
-                            "reviewCount": String(p.reviews || "1850").replace(/,/g, "")
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": `https://samm6868.github.io/ai-store/product-${i}.html`,
-                            "priceCurrency": "USD",
-                            "price": p.price,
-                            "availability": "https://schema.org/InStock"
-                        }
-                    }
-                }))
-            };
-            document.getElementById('schema-jsonld').textContent = JSON.stringify(schemaData);
-        }
-
         async function loadProducts() {
             try {
                 const res = await fetch('products.json?t=' + new Date().getTime());
                 allProducts = await res.json();
-                injectGoogleRichSnippets(allProducts);
                 renderCategories();
                 renderProducts();
             } catch (err) {
