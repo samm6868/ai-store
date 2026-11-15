@@ -1,31 +1,5 @@
 [
   {
-    "title": "Minimalist Sapphire Quartz Chronograph Watch",
-    "price": "29.99",
-    "old_price": "59.99",
-    "category": "Fashion & Style",
-    "badge": "CLASSIC STYLE",
-    "rating": "4.9",
-    "reviews": "3,290",
-    "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1200&q=80",
-    "buy_link": "https://www.aliexpress.com/w/wholesale-minimalist+mens+leather+chronograph+waterproof+watch.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
-    "description": "Timeless stainless steel case paired with a genuine stitched leather strap and scratch-resistant mineral crystal glass.",
-    "tags": "#wristcheck #classicstyle #menswatches #timelessdesign"
-  },
-  {
-    "title": "Foldable Aluminum Ergonomic Laptop Riser Stand",
-    "price": "21.50",
-    "old_price": "43.00",
-    "category": "Smart Living",
-    "badge": "WORK FROM HOME",
-    "rating": "4.9",
-    "reviews": "6,080",
-    "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&q=80",
-    "buy_link": "https://www.aliexpress.com/w/wholesale-foldable+aluminum+adjustable+laptop+stand+desk.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
-    "description": "Elevate your laptop to eye level for better posture and open-air cooling with sturdy aircraft-grade aluminum.",
-    "tags": "#homeoffice #deskorganization #remoteworklife #productivityhacks"
-  },
-  {
     "title": "Magnetic Sport Strap Health Tracker Watch",
     "price": "27.50",
     "old_price": "55.00",
@@ -39,6 +13,58 @@
     "tags": "#watchcollector #techstyle #activelifestyle #smartgadgets"
   },
   {
+    "title": "Studio Wireless Over-Ear ANC Headphones",
+    "price": "28.99",
+    "old_price": "57.99",
+    "category": "Audio & Music",
+    "badge": "BEST VALUE",
+    "rating": "4.9",
+    "reviews": "4,310",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=80",
+    "buy_link": "https://www.aliexpress.com/w/wholesale-wireless+active+noise+cancelling+over+ear+headphones.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
+    "description": "Block out background noise and focus in comfort with plush memory-foam cushions and 40 hours of wireless playback.",
+    "tags": "#headphones #studywithme #remotework #soundquality"
+  },
+  {
+    "title": "Retro Instant Print Digital Pocket Camera",
+    "price": "29.50",
+    "old_price": "59.00",
+    "category": "Content Creation",
+    "badge": "GIFT IDEA",
+    "rating": "4.9",
+    "reviews": "2,840",
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1200&q=80",
+    "buy_link": "https://www.aliexpress.com/w/wholesale-mini+retro+digital+instant+print+camera.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
+    "description": "Capture classic vintage-inspired snapshots and print physical keepsakes in seconds while saving HD copies to memory.",
+    "tags": "#photographylovers #retrostyle #instantcamera #creativegifts"
+  },
+  {
+    "title": "Breathable Ultra-Cushion Running Sneakers",
+    "price": "33.99",
+    "old_price": "67.99",
+    "category": "Fitness & Lifestyle",
+    "badge": "COMFORT PICK",
+    "rating": "4.8",
+    "reviews": "5,540",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
+    "buy_link": "https://www.aliexpress.com/w/wholesale-lightweight+breathable+mesh+running+sneakers.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
+    "description": "Flexible knit uppers and responsive heel cushioning built for long walks, travel days, and daily training sessions.",
+    "tags": "#runningcommunity #sneakerhead #comfortshoes #walkmore"
+  },
+  {
+    "title": "Ultrasonic Flame Aroma Diffuser & Humidifier",
+    "price": "20.99",
+    "old_price": "41.99",
+    "category": "Home Decor",
+    "badge": "HOME FAVORITE",
+    "rating": "4.9",
+    "reviews": "4,750",
+    "image": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=80",
+    "buy_link": "https://www.aliexpress.com/w/wholesale-flame+air+diffuser+humidifier+essential+oil.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
+    "description": "Blends fine ultrasonic mist with warm amber LED light to create a realistic, safe candle-flame effect in your bedroom.",
+    "tags": "#aromatherapy #homefragrance #relaxingvibes #modernhome"
+  },
+  {
     "title": "Pro Spatial Audio Touch-Control Earphones",
     "price": "19.50",
     "old_price": "39.00",
@@ -50,31 +76,5 @@
     "buy_link": "https://www.aliexpress.com/w/wholesale-pro+wireless+bluetooth+touch+earbuds+charging+case.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
     "description": "Featherlight ergonomic fit with smart touch controls, clear dual-mic voice pickup, and all-day pocket charging case.",
     "tags": "#earbuds #dailycommute #podcastlife #techreview"
-  },
-  {
-    "title": "Artisan Ceramic Pour-Over Coffee Maker Set",
-    "price": "25.50",
-    "old_price": "51.00",
-    "category": "Coffee & Kitchen",
-    "badge": "BARISTA CHOICE",
-    "rating": "4.9",
-    "reviews": "2,730",
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
-    "buy_link": "https://www.aliexpress.com/w/wholesale-ceramic+v60+pour+over+coffee+dripper+carafe+set.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
-    "description": "Extract clean, aromatic specialty coffee at home with spiral-ribbed ceramic heat retention and borosilicate server.",
-    "tags": "#pourovercoffee #coffeeculture #homebarista #slowmorning"
-  },
-  {
-    "title": "Ergonomic Ultra-Light Wireless Gaming Mouse",
-    "price": "23.99",
-    "old_price": "47.99",
-    "category": "Electronics",
-    "badge": "DESK UPGRADE",
-    "rating": "4.9",
-    "reviews": "3,620",
-    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=1200&q=80",
-    "buy_link": "https://www.aliexpress.com/w/wholesale-lightweight+wireless+gaming+mouse+rechargeable+rgb.html?sk=_c4Lh9g5v&aff_fsk=_c4Lh9g5v&aff_platform=portals-tool",
-    "description": "Engineered for zero wrist fatigue with honeycomb lightweight shell, silent switches, and lag-free dual wireless connectivity.",
-    "tags": "#pcsetup #workspacegoals #ergonomic #techgear"
   }
 ]
